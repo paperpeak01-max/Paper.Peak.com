@@ -1,125 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paper Peak</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff7fb;
-      color: #333;
-      text-align: center;
-    }
+<title>Paper Peak ✏️</title>
 
-    header {
-      background: #ffd6e7;
-      padding: 35px 20px;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    h1 {
-      font-size: 45px;
-      margin: 0;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff5fb;
+  color: #333;
+  text-align: center;
+}
 
-    .tagline {
-      font-size: 20px;
-      margin-top: 10px;
-    }
+header {
+  background: #ffb6d9;
+  padding: 25px;
+}
 
-    .hero {
-      padding: 60px 20px;
-    }
+header h1 {
+  margin: 0;
+  font-size: 42px;
+}
 
-    .hero h2 {
-      font-size: 35px;
-    }
+header p {
+  font-size: 18px;
+  margin-bottom: 0;
+}
 
-    .hero p {
-      font-size: 18px;
-      max-width: 600px;
-      margin: auto;
-      line-height: 1.6;
-    }
+nav {
+  background: white;
+  padding: 15px;
+}
 
-    .button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 14px 28px;
-      background: #ff8fba;
-      color: white;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: bold;
-    }
+nav a {
+  color: #d94f91;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 12px;
+}
 
-    .products {
-      padding: 40px 20px;
-      background: white;
-    }
+.hero {
+  padding: 60px 20px;
+}
 
-    .products h2 {
-      font-size: 30px;
-    }
+.hero h2 {
+  font-size: 36px;
+  color: #d94f91;
+}
 
-    .cards {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+.hero p {
+  font-size: 19px;
+}
 
-    .card {
-      background: #fff0f6;
-      padding: 25px;
-      border-radius: 20px;
-      width: 180px;
-      font-size: 18px;
-    }
+.button {
+  display: inline-block;
+  background: #d94f91;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+}
 
-    footer {
-      padding: 30px;
-      background: #ffd6e7;
-    }
-  </style>
+.products {
+  padding: 30px 20px;
+}
+
+.products h2 {
+  color: #d94f91;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  width: 220px;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px #e8c6d8;
+}
+
+.card .emoji {
+  font-size: 45px;
+}
+
+.card h3 {
+  color: #d94f91;
+}
+
+footer {
+  margin-top: 40px;
+  padding: 25px;
+  background: #ffb6d9;
+}
+
+footer a {
+  color: #8b2458;
+  font-weight: bold;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>🏔️ Paper Peak ✏️</h1>
-    <div class="tagline">Reach New Heights with Stationery! ✨</div>
-  </header>
+<header>
+  <h1>🏔️ Paper Peak ✏️</h1>
+  <p>Reach New Heights with Stationery!</p>
+</header>
 
-  <section class="hero">
-    <h2>Welcome to Paper Peak! 💖📚</h2>
+<nav>
+  <a href="index.html">Home 🏠</a>
+  <a href="shop.html">Shop 🛍️</a>
+</nav>
 
-    <p>
-      Discover fun, creative and stylish stationery made for writing,
-      planning, studying and creating! 📝🎨✨
-    </p>
+<section class="hero">
+  <h2>Welcome to Paper Peak! 💖</h2>
 
-    <a class="button" href="#products">Explore Stationery 🛍️</a>
-  </section>
+  <p>
+    Cute, fun and creative stationery made for every idea,
+    plan and dream. ✨📚📝
+  </p>
 
-  <section class="products" id="products">
-    <h2>Our Stationery ✏️📓</h2>
+  <a class="button" href="shop.html">Shop Now 🛍️</a>
+</section>
 
-    <div class="cards">
-      <div class="card">📓<br>Notebooks</div>
-      <div class="card">🖊️<br>Pens</div>
-      <div class="card">📔<br>Journals</div>
-      <div class="card">📅<br>Planners</div>
+<section class="products">
+  <h2>Our Stationery ✨</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="emoji">📓</div>
+      <h3>Notebooks</h3>
+      <p>Perfect for notes, ideas and doodles!</p>
     </div>
-  </section>
 
-  <footer>
-    <p>💌 Enquire today!</p>
-    <p>📧 Paperpeak1@outlook.com.au</p>
-    <p>© 2026 Paper Peak 🏔️✨</p>
-  </footer>
+    <div class="card">
+      <div class="emoji">🖊️</div>
+      <h3>Pens</h3>
+      <p>Make every word a little more fun!</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">📔</div>
+      <h3>Journals</h3>
+      <p>Write down your thoughts and dreams.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">📅</div>
+      <h3>Planners</h3>
+      <p>Stay organised and reach your goals!</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>💌 Enquire today!</p>
+
+  <p>
+    📧
+    <a href="mailto:Paperpeak1@outlook.com.au">
+      Paperpeak1@outlook.com.au
+    </a>
+  </p>
+
+  <p>© 2026 Paper Peak 🏔️✨</p>
+</footer>
 
 </body>
 </html>
