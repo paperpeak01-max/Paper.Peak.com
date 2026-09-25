@@ -1,184 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop | Paper Peak</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paper Peak | Shop</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff7fc;
-      color: #333;
-      text-align: center;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    header {
-      background: #ffd6ec;
-      padding: 30px 20px;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff5fb;
+  color: #333;
+  text-align: center;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 40px;
-      color: #d94f9d;
-    }
+header {
+  background: #ffb6d9;
+  padding: 30px 20px;
+}
 
-    header p {
-      font-size: 18px;
-    }
+header h1 {
+  margin: 0;
+  font-size: 42px;
+}
 
-    nav {
-      background: white;
-      padding: 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
+header p {
+  font-size: 18px;
+}
 
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #d94f9d;
-      font-weight: bold;
-    }
+.promo {
+  background: #ffe66d;
+  padding: 18px;
+  font-size: 20px;
+  font-weight: bold;
+}
 
-    .shop {
-      padding: 40px 20px;
-    }
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 20px;
+}
 
-    .shop h2 {
-      font-size: 32px;
-      color: #d94f9d;
-    }
+h2 {
+  color: #e85d9e;
+  font-size: 32px;
+}
 
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      margin-top: 30px;
-    }
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+}
 
-    .product {
-      background: white;
-      width: 220px;
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
+.product {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 
-    .product .emoji {
-      font-size: 55px;
-    }
+.emoji {
+  font-size: 50px;
+}
 
-    .product h3 {
-      color: #d94f9d;
-      font-size: 22px;
-    }
+.product h3 {
+  margin: 10px 0;
+  color: #e85d9e;
+}
 
-    .product p {
-      font-size: 15px;
-    }
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+}
 
-    .price {
-      font-size: 20px;
-      font-weight: bold;
-      color: #7b61a8;
-    }
+.button {
+  display: inline-block;
+  background: #ff8fc7;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    .button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 22px;
-      background: #e875b5;
-      color: white;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: bold;
-    }
+.button:hover {
+  background: #e85d9e;
+}
 
-    .button:hover {
-      background: #d94f9d;
-    }
-
-    footer {
-      margin-top: 40px;
-      padding: 25px;
-      background: #f3dff0;
-    }
-  </style>
+footer {
+  background: #ffb6d9;
+  padding: 25px;
+  margin-top: 30px;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>🏔️ Paper Peak ✏️</h1>
-    <p>Reach New Heights with Stationery! ✨</p>
-  </header>
+<header>
+  <h1>🏔️ Paper Peak ✏️</h1>
+  <p>Reach New Heights with Stationery!</p>
+</header>
 
-  <nav>
-    <a href="index.html">🏠 Home</a>
-    <a href="Shop.html">🛍️ Shop</a>
-  </nav>
+<div class="promo">
+  🎁 FREE STICKERS! 🎁<br>
+  Spend every $2 and receive 1 FREE pack of stickers! 🌈✨
+</div>
 
-  <section class="shop">
-    <h2>🛍️ Our Stationery Collection</h2>
+<div class="container">
 
-    <p>
-      Discover cute, creative and stylish stationery made for
-      writing, planning, studying and creating! 📚🎨✨
-    </p>
+<h2>🛍️ Our Stationery Shop</h2>
 
-    <div class="products">
+<div class="products">
 
-      <div class="product">
-        <div class="emoji">📓</div>
-        <h3>Cute Notebooks</h3>
-        <p>Perfect for school, notes, ideas and creative projects.</p>
-        <div class="price">$8.99</div>
-        <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Notebook Enquiry">
-          Enquire 💌
-        </a>
-      </div>
+<div class="product">
+  <div class="emoji">✏️</div>
+  <h3>Pencils</h3>
+  <p>Perfect for school, study and drawing.</p>
+  <div class="price">$2.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Pencils Enquiry">Enquire 🛍️</a>
+</div>
 
-      <div class="product">
-        <div class="emoji">🖊️</div>
-        <h3>Pretty Pens</h3>
-        <p>Make every note more colourful and fun!</p>
-        <div class="price">$4.99</div>
-        <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Pen Enquiry">
-          Enquire 💌
-        </a>
-      </div>
+<div class="product">
+  <div class="emoji">🖊️</div>
+  <h3>Pens</h3>
+  <p>Fun and colourful everyday pens.</p>
+  <div class="price">$2.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Pens Enquiry">Enquire 🛍️</a>
+</div>
 
-      <div class="product">
-        <div class="emoji">📔</div>
-        <h3>Journals</h3>
-        <p>A lovely place for your thoughts, memories and ideas.</p>
-        <div class="price">$12.99</div>
-        <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Journal Enquiry">
-          Enquire 💌
-        </a>
-      </div>
+<div class="product">
+  <div class="emoji">🌈</div>
+  <h3>Coloured Pencils</h3>
+  <p>Add colour to your notes and drawings.</p>
+  <div class="price">$5.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Coloured Pencils Enquiry">Enquire 🛍️</a>
+</div>
 
-      <div class="product">
-        <div class="emoji">📅</div>
-        <h3>Planners</h3>
-        <p>Stay organised and reach your goals in style!</p>
-        <div class="price">$14.99</div>
-        <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Planner Enquiry">
-          Enquire 💌
-        </a>
-      </div>
+<div class="product">
+  <div class="emoji">🖍️</div>
+  <h3>Markers</h3>
+  <p>Bright markers for creative projects.</p>
+  <div class="price">$6.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Markers Enquiry">Enquire 🛍️</a>
+</div>
 
-    </div>
-  </section>
+<div class="product">
+  <div class="emoji">🟡</div>
+  <h3>Highlighters</h3>
+  <p>Make your notes stand out!</p>
+  <div class="price">$4.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Highlighters Enquiry">Enquire 🛍️</a>
+</div>
 
-  <footer>
-    <p>💌 Enquire today!</p>
-    <p>📧 Paperpeak1@outlook.com.au</p>
-    <p>© 2026 Paper Peak 🏔️✨</p>
-  </footer>
+<div class="product">
+  <div class="emoji">📓</div>
+  <h3>Notebooks</h3>
+  <p>Cute notebooks for all your ideas.</p>
+  <div class="price">$6.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Notebooks Enquiry">Enquire 🛍️</a>
+</div>
+
+<div class="product">
+  <div class="emoji">📔</div>
+  <h3>Journals</h3>
+  <p>Write, plan and create every day.</p>
+  <div class="price">$10.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Journals Enquiry">Enquire 🛍️</a>
+</div>
+
+<div class="product">
+  <div class="emoji">📅</div>
+  <h3>Planners</h3>
+  <p>Stay organised and reach your goals.</p>
+  <div class="price">$14.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Planners Enquiry">Enquire 🛍️</a>
+</div>
+
+<div class="product">
+  <div class="emoji">📝</div>
+  <h3>Sticky Notes</h3>
+  <p>Perfect for reminders and study notes.</p>
+  <div class="price">$3.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Sticky Notes Enquiry">Enquire 🛍️</a>
+</div>
+
+<div class="product">
+  <div class="emoji">🎀</div>
+  <h3>Washi Tape</h3>
+  <p>Decorate your stationery in style.</p>
+  <div class="price">$4.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Washi Tape Enquiry">Enquire 🛍️</a>
+</div>
+
+<div class="product">
+  <div class="emoji">✂️</div>
+  <h3>Scissors</h3>
+  <p>Great for crafts and school projects.</p>
+  <div class="price">$5.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Scissors Enquiry">Enquire 🛍️</a>
+</div>
+
+<div class="product">
+  <div class="emoji">🧴</div>
+  <h3>Glue</h3>
+  <p>Handy for school and creative projects.</p>
+  <div class="price">$3.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Glue Enquiry">Enquire 🛍️</a>
+</div>
+
+<div class="product">
+  <div class="emoji">📏</div>
+  <h3>Rulers</h3>
+  <p>Measure, draw and create straight lines.</p>
+  <div class="price">$2.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Rulers Enquiry">Enquire 🛍️</a>
+</div>
+
+<div class="product">
+  <div class="emoji">🧽</div>
+  <h3>Erasers</h3>
+  <p>Clean up mistakes with ease.</p>
+  <div class="price">$2.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Erasers Enquiry">Enquire 🛍️</a>
+</div>
+
+<div class="product">
+  <div class="emoji">🔪</div>
+  <h3>Sharpeners</h3>
+  <p>Keep your pencils perfectly sharp.</p>
+  <div class="price">$2.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Sharpeners Enquiry">Enquire 🛍️</a>
+</div>
+
+<div class="product">
+  <div class="emoji">🎒</div>
+  <h3>Pencil Cases</h3>
+  <p>Keep all your stationery together.</p>
+  <div class="price">$8.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Pencil Cases Enquiry">Enquire 🛍️</a>
+</div>
+
+<div class="product">
+  <div class="emoji">📁</div>
+  <h3>Folders</h3>
+  <p>Keep your schoolwork organised.</p>
+  <div class="price">$4.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Folders Enquiry">Enquire 🛍️</a>
+</div>
+
+<div class="product">
+  <div class="emoji">📎</div>
+  <h3>Paper Clips</h3>
+  <p>Keep your papers together.</p>
+  <div class="price">$2.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Paper Clips Enquiry">Enquire 🛍️</a>
+</div>
+
+<div class="product">
+  <div class="emoji">📌</div>
+  <h3>Staplers</h3>
+  <p>Perfect for keeping pages together.</p>
+  <div class="price">$7.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Staplers Enquiry">Enquire 🛍️</a>
+</div>
+
+<div class="product">
+  <div class="emoji">🩷</div>
+  <h3>Correction Tape</h3>
+  <p>Quickly cover mistakes and rewrite.</p>
+  <div class="price">$4.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Correction Tape Enquiry">Enquire 🛍️</a>
+</div>
+
+<div class="product">
+  <div class="emoji">🌈</div>
+  <h3>Sticker Packs</h3>
+  <p>Make your stationery extra cute!</p>
+  <div class="price">$3.00</div>
+  <a class="button" href="mailto:Paperpeak1@outlook.com.au?subject=Sticker Packs Enquiry">Enquire 🛍️</a>
+</div>
+
+</div>
+</div>
+
+<footer>
+  <h3>💌 Paper Peak</h3>
+  <p>Enquire today!</p>
+  <p>📧 Paperpeak1@outlook.com.au</p>
+  <p>© 2026 Paper Peak 🏔️✨</p>
+</footer>
 
 </body>
 </html>
