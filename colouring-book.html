@@ -1,827 +1,261 @@
+
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Paper Peak | Free Colouring Book</title>
+  <title>Paper Peak Coloring Book</title>
 
   <style>
-
-    * {
-
-      box-sizing: border-box;
-
-    }
-
     body {
-
       margin: 0;
-
       font-family: Arial, sans-serif;
-
-      background: #fff0f6;
-
-      color: #57364a;
-
       text-align: center;
-
+      background: #fff0f7;
+      color: #333;
     }
 
     header {
-
       background: #ffb6d5;
-
-      padding: 25px 15px;
-
-    }
-
-    header h1 {
-
-      color: #8b2456;
-
+      padding: 25px;
+      color: #7a2450;
     }
 
     nav {
-
       background: white;
-
-      padding: 16px;
-
-      display: flex;
-
-      justify-content: center;
-
-      flex-wrap: wrap;
-
-      gap: 18px;
-
+      padding: 15px;
     }
 
     nav a {
-
-      color: #9c3567;
-
-      font-weight: bold;
-
+      margin: 10px;
+      color: #a52a66;
       text-decoration: none;
-
-    }
-
-    .container {
-
-      max-width: 850px;
-
-      margin: auto;
-
-      padding: 20px 15px;
-
+      font-weight: bold;
     }
 
     .book {
-
-      background: white;
-
-      border-radius: 20px;
-
+      max-width: 700px;
+      margin: 25px auto;
       padding: 20px;
-
-      box-shadow: 0 4px 12px #edc3d5;
-
-      margin-top: 20px;
-
-    }
-
-    .page-title {
-
-      color: #a32c66;
-
-      font-size: 23px;
-
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px #e7b6ce;
     }
 
     svg {
-
       width: 100%;
-
-      max-width: 600px;
-
-      height: auto;
-
+      max-width: 500px;
+      border: 3px dashed #ffb6d5;
+      border-radius: 15px;
       background: white;
-
-      border: 3px solid #333;
-
-      border-radius: 8px;
-
-      margin: 15px auto;
-
-      display: block;
-
     }
 
-    .drawing {
-
-      fill: white;
-
-      stroke: black;
-
-      stroke-width: 4;
-
-      stroke-linecap: round;
-
-      stroke-linejoin: round;
-
-    }
-
-    .button {
-
-      display: inline-block;
-
-      border: none;
-
-      border-radius: 25px;
-
-      padding: 13px 22px;
-
+    button {
       margin: 8px;
-
-      background: #e65391;
-
+      padding: 14px 22px;
+      border: none;
+      border-radius: 25px;
+      background: #ff78b5;
       color: white;
-
-      font-weight: bold;
-
       font-size: 16px;
-
-      cursor: pointer;
-
-      text-decoration: none;
-
-    }
-
-    .button:hover {
-
-      background: #b52d6a;
-
-    }
-
-    .counter {
-
       font-weight: bold;
-
-      font-size: 18px;
-
+      cursor: pointer;
     }
 
-    footer {
+    button:hover {
+      background: #e84d95;
+    }
 
-      background: #ffb6d5;
-
-      padding: 25px;
-
-      margin-top: 30px;
-
+    .back {
+      display: inline-block;
+      margin: 20px;
+      padding: 14px 22px;
+      background: #7ccf9b;
+      color: #174e2c;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
     }
 
     @media print {
+      header, nav, button, .back, footer, p {
+        display: none;
+      }
 
-      body {
-
+      body, .book {
         background: white;
-
-      }
-
-      header, nav, .controls, footer,
-
-      .instructions, .page-title {
-
-        display: none !important;
-
-      }
-
-      .container, .book {
-
-        padding: 0;
-
-        margin: 0;
-
         box-shadow: none;
-
-        border: none;
-
+        margin: 0;
       }
 
       svg {
-
-        width: 100%;
-
-        max-width: 100%;
-
         border: none;
-
-        margin: 0;
-
+        max-width: 100%;
       }
-
     }
-
   </style>
-
 </head>
 
 <body>
 
-  <header>
-
-    <h1>🎨 Paper Peak Colouring Book</h1>
-
-    <p>Reach New Heights with Stationery!</p>
-
-    <p>12 fun designs to colour and print for free!</p>
-
-  </header>
-
-  <nav>
-
-    <a href="index.html">Home</a>
-
-    <a href="shop.html">Shop</a>
-
-    <a href="free-stuff.html">Free Stuff 🎁</a>
-
-    <a href="coloring-book.html">Colouring Book</a>
-
-  </nav>
-
-  <main class="container">
-
-    <h2>Welcome to your free colouring book!</h2>
-
-    <p class="instructions">
-
-      Use the Previous and Next buttons to explore
-
-      the designs. Print a page to colour it on paper.
-
-    </p>
-
-    <div class="book">
-
-      <h3 class="page-title" id="pageTitle">
-
-        Page 1: Happy Flower
-
-      </h3>
-
-      <div id="drawingArea"></div>
-
-      <p class="counter" id="counter">
-
-        Page 1 of 12
-
-      </p>
-
-      <div class="controls">
-
-        <button class="button" onclick="previousPage()">
-
-          ◀ Previous
-
-        </button>
-
-        <button class="button" onclick="nextPage()">
-
-          Next ▶
-
-        </button>
-
-        <button class="button" onclick="printPage()">
-
-          🖨️ Print Page
-
-        </button>
-
-      </div>
-
-    </div>
-
-    <p class="instructions">
-
-      Tip: Print the pages and use your favourite
-
-      coloured pencils, markers or crayons!
-
-    </p>
-
-  </main>
-
-  <footer>
-
-    <p>© 2026 Paper Peak</p>
-
-    <p>Reach New Heights with Stationery!</p>
-
-    <p><a href="index.html">Back to Home</a></p>
-
-  </footer>
-
-  <script>
-
-    const designs = [
-
-      {
-
-        title: "Happy Flower",
-
-        svg: `
-
-          <circle class="drawing" cx="300" cy="280" r="65"/>
-
-          <g class="drawing">
-
-            <ellipse cx="300" cy="170" rx="38" ry="65"/>
-
-            <ellipse cx="300" cy="390" rx="38" ry="65"/>
-
-            <ellipse cx="190" cy="280" rx="65" ry="38"/>
-
-            <ellipse cx="410" cy="280" rx="65" ry="38"/>
-
-            <ellipse cx="222" cy="202" rx="38" ry="65" transform="rotate(-45 222 202)"/>
-
-            <ellipse cx="378" cy="202" rx="38" ry="65" transform="rotate(45 378 202)"/>
-
-            <ellipse cx="222" cy="358" rx="38" ry="65" transform="rotate(45 222 358)"/>
-
-            <ellipse cx="378" cy="358" rx="38" ry="65" transform="rotate(-45 378 358)"/>
-
-            <circle cx="280" cy="270" r="5"/>
-
-            <circle cx="320" cy="270" r="5"/>
-
-            <path d="M280 305 Q300 325 320 305"/>
-
-            <path d="M300 450 L300 600"/>
-
-            <path d="M300 520 Q210 460 210 530 Q250 570 300 520"/>
-
-            <path d="M300 570 Q390 510 390 580 Q350 620 300 570"/>
-
-          </g>
-
-        `
-
-      },
-
-      {
-
-        title: "Cute Cat",
-
-        svg: `
-
-          <g class="drawing">
-
-            <path d="M180 250 L180 130 L270 190 Q300 180 330 190 L420 130 L420 250 Q470 380 300 440 Q130 380 180 250 Z"/>
-
-            <circle cx="250" cy="280" r="12"/>
-
-            <circle cx="350" cy="280" r="12"/>
-
-            <path d="M285 320 L315 320 L300 340 Z"/>
-
-            <path d="M300 340 Q270 370 245 345"/>
-
-            <path d="M300 340 Q330 370 355 345"/>
-
-            <path d="M245 320 L170 300 M245 340 L170 350"/>
-
-            <path d="M355 320 L430 300 M355 340 L430 350"/>
-
-            <path d="M210 440 L210 510 M390 440 L390 510"/>
-
-            <path d="M210 510 Q170 540 140 510 M210 510 Q240 540 270 510"/>
-
-            <path d="M390 510 Q350 540 320 510 M390 510 Q420 540 450 510"/>
-
-            <path d="M265 440 Q300 480 335 440"/>
-
-          </g>
-
-        `
-
-      },
-
-      {
-
-        title: "Rainbow",
-
-        svg: `
-
-          <g class="drawing">
-
-            <path d="M100 500 A200 200 0 0 1 500 500"/>
-
-            <path d="M145 500 A155 155 0 0 1 455 500"/>
-
-            <path d="M190 500 A110 110 0 0 1 410 500"/>
-
-            <path d="M235 500 A65 65 0 0 1 365 500"/>
-
-            <path d="M100 500 L100 560 L500 560 L500 500"/>
-
-            <path d="M100 500 Q50 480 65 430 Q75 390 120 400"/>
-
-            <path d="M500 500 Q550 480 535 430 Q525 390 480 400"/>
-
-            <circle cx="100" cy="430" r="35"/>
-
-            <circle cx="130" cy="400" r="40"/>
-
-            <circle cx="165" cy="430" r="35"/>
-
-            <circle cx="470" cy="430" r="35"/>
-
-            <circle cx="440" cy="400" r="40"/>
-
-            <circle cx="405" cy="430" r="35"/>
-
-          </g>
-
-        `
-
-      },
-
-      {
-
-        title: "Butterfly",
-
-        svg: `
-
-          <g class="drawing">
-
-            <ellipse cx="235" cy="250" rx="100" ry="130" transform="rotate(-35 235 250)"/>
-
-            <ellipse cx="365" cy="250" rx="100" ry="130" transform="rotate(35 365 250)"/>
-
-            <ellipse cx="235" cy="410" rx="65" ry="95" transform="rotate(35 235 410)"/>
-
-            <ellipse cx="365" cy="410" rx="65" ry="95" transform="rotate(-35 365 410)"/>
-
-            <path d="M300 230 L300 500"/>
-
-            <circle cx="300" cy="205" r="25"/>
-
-            <path d="M290 185 Q260 120 230 140"/>
-
-            <path d="M310 185 Q340 120 370 140"/>
-
-            <circle cx="220" cy="250" r="25"/>
-
-            <circle cx="380" cy="250" r="25"/>
-
-            <circle cx="245" cy="410" r="18"/>
-
-            <circle cx="355" cy="410" r="18"/>
-
-          </g>
-
-        `
-
-      },
-
-      {
-
-        title: "Ice Cream",
-
-        svg: `
-
-          <g class="drawing">
-
-            <path d="M190 330 L410 330 L300 580 Z"/>
-
-            <path d="M210 380 L390 380 M235 435 L365 435 M260 490 L340 490"/>
-
-            <circle cx="240" cy="270" r="75"/>
-
-            <circle cx="360" cy="270" r="75"/>
-
-            <circle cx="300" cy="190" r="75"/>
-
-            <path d="M285 185 Q300 205 315 185"/>
-
-            <circle cx="280" cy="175" r="5"/>
-
-            <circle cx="320" cy="175" r="5"/>
-
-            <path d="M285 210 Q300 225 315 210"/>
-
-            <circle cx="220" cy="260" r="5"/>
-
-            <circle cx="260" cy="290" r="5"/>
-
-            <circle cx="360" cy="250" r="5"/>
-
-            <circle cx="390" cy="285" r="5"/>
-
-          </g>
-
-        `
-
-      },
-
-      {
-
-        title: "Cute Dinosaur",
-
-        svg: `
-
-          <g class="drawing">
-
-            <path d="M170 430 L170 300 L220 300 L250 230 L290 270 L330 210 L370 270 L410 270 L450 340 L430 440 L390 480 L240 480 Z"/>
-
-            <circle cx="380" cy="330" r="12"/>
-
-            <path d="M410 375 Q380 395 350 375"/>
-
-            <path d="M240 480 L230 550 L280 550 L300 480"/>
-
-            <path d="M350 480 L360 550 L410 550 L390 480"/>
-
-            <path d="M170 430 L110 470 L170 460"/>
-
-            <circle cx="260" cy="320" r="20"/>
-
-            <circle cx="320" cy="300" r="20"/>
-
-            <circle cx="380" cy="290" r="20"/>
-
-          </g>
-
-        `
-
-      },
-
-      {
-
-        title: "Heart",
-
-        svg: `
-
-          <g class="drawing">
-
-            <path d="M300 510 C250 440 100 350 100 240 C100 120 260 100 300 220 C340 100 500 120 500 240 C500 350 350 440 300 510 Z"/>
-
-            <path d="M200 300 Q300 350 400 300"/>
-
-            <path d="M250 250 Q300 280 350 250"/>
-
-            <circle cx="250" cy="220" r="8"/>
-
-            <circle cx="350" cy="220" r="8"/>
-
-          </g>
-
-        `
-
-      },
-
-      {
-
-        title: "Friendly Robot",
-
-        svg: `
-
-          <g class="drawing">
-
-            <rect x="190" y="200" width="220" height="200" rx="25"/>
-
-            <rect x="240" y="130" width="120" height="70" rx="15"/>
-
-            <path d="M300 130 L300 90"/>
-
-            <circle cx="300" cy="75" r="15"/>
-
-            <circle cx="250" cy="270" r="20"/>
-
-            <circle cx="350" cy="270" r="20"/>
-
-            <path d="M250 330 L350 330"/>
-
-            <path d="M190 250 L120 220 L120 350"/>
-
-            <path d="M410 250 L480 220 L480 350"/>
-
-            <path d="M240 400 L220 500 L270 500 L300 400"/>
-
-            <path d="M360 400 L380 500 L330 500 L300 400"/>
-
-          </g>
-
-        `
-
-      },
-
-      {
-
-        title: "Little House",
-
-        svg: `
-
-          <g class="drawing">
-
-            <path d="M130 300 L300 150 L470 300"/>
-
-            <rect x="160" y="300" width="280" height="240"/>
-
-            <rect x="260" y="400" width="80" height="140"/>
-
-            <rect x="190" y="340" width="55" height="55"/>
-
-            <rect x="355" y="340" width="55" height="55"/>
-
-            <path d="M130 300 L130 250 L210 250 L210 230"/>
-
-            <path d="M370 220 L370 140 L420 140 L420 270"/>
-
-            <circle cx="320" cy="470" r="5"/>
-
-            <path d="M80 540 L520 540"/>
-
-            <circle cx="100" cy="200" r="35"/>
-
-            <circle cx="500" cy="150" r="30"/>
-
-          </g>
-
-        `
-
-      },
-
-      {
-
-        title: "Space Rocket",
-
-        svg: `
-
-          <g class="drawing">
-
-            <path d="M300 120 Q430 250 360 430 L240 430 Q170 250 300 120 Z"/>
-
-            <circle cx="300" cy="270" r="40"/>
-
-            <path d="M240 350 L160 430 L240 410"/>
-
-            <path d="M360 350 L440 430 L360 410"/>
-
-            <path d="M260 430 L280 520 L300 470 L320 520 L340 430"/>
-
-            <circle cx="120" cy="180" r="20"/>
-
-            <circle cx="480" cy="230" r="25"/>
-
-            <path d="M130 350 L140 370 L160 380 L140 390 L130 410 L120 390 L100 380 L120 370 Z"/>
-
-            <path d="M460 100 L470 120 L490 130 L470 140 L460 160 L450 140 L430 130 L450 120 Z"/>
-
-          </g>
-
-        `
-
-      },
-
-      {
-
-        title: "Cute Owl",
-
-        svg: `
-
-          <g class="drawing">
-
-            <path d="M170 450 L150 200 L250 260 Q300 220 350 260 L450 200 L430 450 Q300 570 170 450 Z"/>
-
-            <circle cx="250" cy="330" r="60"/>
-
-            <circle cx="350" cy="330" r="60"/>
-
-            <circle cx="250" cy="330" r="15"/>
-
-            <circle cx="350" cy="330" r="15"/>
-
-            <path d="M285 400 L315 400 L300 430 Z"/>
-
-            <path d="M220 500 L200 550 L270 530"/>
-
-            <path d="M380 500 L400 550 L330 530"/>
-
-            <path d="M230 220 L260 190 L290 240"/>
-
-            <path d="M310 240 L340 190 L370 220"/>
-
-          </g>
-
-        `
-
-      },
-
-      {
-
-        title: "Paper Peak Mountain",
-
-        svg: `
-
-          <g class="drawing">
-
-            <path d="M60 520 L230 200 L300 330 L380 150 L540 520 Z"/>
-
-            <path d="M180 300 L230 200 L280 300 L245 285 L230 260 L210 285 Z"/>
-
-            <path d="M330 250 L380 150 L430 250 L400 235 L380 210 L360 235 Z"/>
-
-            <path d="M60 520 L540 520"/>
-
-            <circle cx="130" cy="150" r="40"/>
-
-            <path d="M105 150 L125 170 L160 125"/>
-
-            <path d="M130 250 L130 310 M100 280 L160 280"/>
-
-            <path d="M470 100 L480 120 L500 130 L480 140 L470 160 L460 140 L440 130 L460 120 Z"/>
-
-            <path d="M300 390 L300 470"/>
-
-            <path d="M260 430 L300 390 L340 430"/>
-
-          </g>
-
-        `
-
-      }
-
-    ];
-
-    let currentPage = 0;
-
-    function showPage() {
-
-      const design = designs[currentPage];
-
-      document.getElementById("pageTitle").textContent =
-
-        "Page " + (currentPage + 1) + ": " + design.title;
-
-      document.getElementById("counter").textContent =
-
-        "Page " + (currentPage + 1) + " of " + designs.length;
-
-      document.getElementById("drawingArea").innerHTML =
-
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 650" role="img" aria-label="' +
-
-        design.title +
-
-        ' colouring page">' +
-
-        '<rect x="5" y="5" width="590" height="640" rx="10" fill="white" stroke="black" stroke-width="3"/>' +
-
-        design.svg +
-
-        '</svg>';
-
+<header>
+  <h1>Paper Peak Coloring Book</h1>
+  <p>Reach New Heights with Stationery!</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="free-stuff.html">Free Stuff</a>
+</nav>
+
+<div class="book">
+
+  <h2>Welcome to Your Free Coloring Book!</h2>
+  <p>Choose a page and enjoy colouring!</p>
+
+  <h3 id="title">Happy Pencil</h3>
+
+  <p id="number">Page 1 of 6</p>
+
+  <svg id="picture" viewBox="0 0 500 500"
+       xmlns="http://www.w3.org/2000/svg">
+    <rect width="500" height="500" fill="white"/>
+    <g fill="white" stroke="black" stroke-width="5"
+       stroke-linejoin="round" stroke-linecap="round">
+      <rect x="180" y="100" width="140" height="280" rx="25"/>
+      <path d="M180 150 H320 M180 330 H320"/>
+      <path d="M180 100 L250 35 L320 100"/>
+      <circle cx="225" cy="230" r="10"/>
+      <circle cx="275" cy="230" r="10"/>
+      <path d="M220 270 Q250 300 280 270"/>
+    </g>
+  </svg>
+
+  <div>
+    <button onclick="previous()">⬅ Previous</button>
+    <button onclick="next()">Next ➡</button>
+    <button onclick="window.print()">🖨 Print</button>
+  </div>
+
+</div>
+
+<a class="back" href="free-stuff.html">Back to Free Stuff</a>
+
+<footer>
+  <p>© 2026 Paper Peak</p>
+</footer>
+
+<script>
+  const pages = [
+    {
+      name: "Happy Pencil",
+      art: `
+        <rect x="180" y="100" width="140" height="280" rx="25"/>
+        <path d="M180 150 H320 M180 330 H320"/>
+        <path d="M180 100 L250 35 L320 100"/>
+        <circle cx="225" cy="230" r="10"/>
+        <circle cx="275" cy="230" r="10"/>
+        <path d="M220 270 Q250 300 280 270"/>
+      `
+    },
+    {
+      name: "Cute Notebook",
+      art: `
+        <rect x="130" y="90" width="240" height="320" rx="20"/>
+        <path d="M180 90 V410 M130 160 H370 M130 220 H370"/>
+        <circle cx="155" cy="130" r="8"/>
+        <circle cx="155" cy="190" r="8"/>
+        <circle cx="250" cy="250" r="30"/>
+        <circle cx="240" cy="245" r="4"/>
+        <circle cx="260" cy="245" r="4"/>
+        <path d="M240 260 Q250 270 260 260"/>
+      `
+    },
+    {
+      name: "Smiling Star",
+      art: `
+        <path d="M250 55 L305 180 L440 190 L335 280
+        L365 420 L250 345 L135 420 L165 280
+        L60 190 L195 180 Z"/>
+        <circle cx="220" cy="230" r="10"/>
+        <circle cx="280" cy="230" r="10"/>
+        <path d="M215 275 Q250 310 285 275"/>
+      `
+    },
+    {
+      name: "Pretty Flower",
+      art: `
+        <circle cx="250" cy="170" r="50"/>
+        <circle cx="250" cy="90" r="50"/>
+        <circle cx="330" cy="170" r="50"/>
+        <circle cx="250" cy="250" r="50"/>
+        <circle cx="170" cy="170" r="50"/>
+        <path d="M250 250 V430"/>
+        <path d="M250 340 Q150 270 140 360 Q190 400 250 340"/>
+        <path d="M250 380 Q350 300 370 390 Q310 440 250 380"/>
+        <circle cx="235" cy="165" r="6"/>
+        <circle cx="265" cy="165" r="6"/>
+        <path d="M230 190 Q250 210 270 190"/>
+      `
+    },
+    {
+      name: "Happy Sun",
+      art: `
+        <circle cx="250" cy="240" r="100"/>
+        <path d="M250 60 V100 M250 380 V420
+        M70 240 H110 M390 240 H430
+        M120 110 L150 140 M350 340 L380 370
+        M120 370 L150 340 M350 140 L380 110"/>
+        <circle cx="220" cy="225" r="10"/>
+        <circle cx="280" cy="225" r="10"/>
+        <path d="M210 270 Q250 310 290 270"/>
+      `
+    },
+    {
+      name: "Lovely Heart",
+      art: `
+        <path d="M250 400
+        C180 330 60 240 100 150
+        C130 80 220 100 250 170
+        C280 100 370 80 400 150
+        C440 240 320 330 250 400 Z"/>
+        <circle cx="210" cy="220" r="10"/>
+        <circle cx="290" cy="220" r="10"/>
+        <path d="M210 260 Q250 300 290 260"/>
+      `
     }
+  ];
 
-    function nextPage() {
+  let current = 0;
 
-      currentPage = (currentPage + 1) % designs.length;
+  function showPage() {
+    document.getElementById("title").textContent =
+      pages[current].name;
 
-      showPage();
+    document.getElementById("number").textContent =
+      "Page " + (current + 1) + " of " + pages.length;
 
-    }
+    document.getElementById("picture").innerHTML =
+      '<rect width="500" height="500" fill="white"/>' +
+      '<g fill="white" stroke="black" stroke-width="5" ' +
+      'stroke-linejoin="round" stroke-linecap="round">' +
+      pages[current].art +
+      '</g>';
+  }
 
-    function previousPage() {
-
-      currentPage =
-
-        (currentPage - 1 + designs.length) % designs.length;
-
-      showPage();
-
-    }
-
-    function printPage() {
-
-      window.print();
-
-    }
-
+  function next() {
+    current = (current + 1) % pages.length;
     showPage();
+  }
 
-  </script>
+  function previous() {
+    current = (current - 1 + pages.length) % pages.length;
+    showPage();
+  }
+
+  showPage();
+</script>
 
 </body>
-
 </html>
