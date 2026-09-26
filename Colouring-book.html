@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Paper Peak Coloring Book</title>
+
+<style>
+
+* { box-sizing: border-box; }
+
+body {
+
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+
+  background: #e7f5ff;
+
+  color: #205580;
+
+  text-align: center;
+
+}
+
+header {
+
+  background: #91cfff;
+
+  padding: 20px;
+
+}
+
+header h1 {
+
+  margin: 0;
+
+  font-size: 30px;
+
+}
+
+nav { padding: 15px; }
+
+nav a {
+
+  color: #205580;
+
+  font-weight: bold;
+
+  text-decoration: none;
+
+}
+
+button {
+
+  border: none;
+
+  border-radius: 30px;
+
+  padding: 14px 25px;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  background: #258bd0;
+
+  color: white;
+
+  margin: 8px;
+
+}
+
+button:hover { background: #176ba8; }
+
+#cover {
+
+  max-width: 550px;
+
+  margin: 20px auto;
+
+  padding: 20px;
+
+}
+
+.cover-art {
+
+  background: linear-gradient(#8bd5ff, #e9faff);
+
+  border: 5px solid white;
+
+  border-radius: 25px;
+
+  box-shadow: 0 8px 25px #7ab6dc55;
+
+  padding: 15px;
+
+}
+
+.cover-art h2 {
+
+  font-size: 38px;
+
+  color: #176ba8;
+
+}
+
+.cover-art svg {
+
+  width: 100%;
+
+  max-height: 350px;
+
+}
+
+#book {
+
+  display: none;
+
+  max-width: 750px;
+
+  margin: 20px auto;
+
+  padding: 15px;
+
+}
+
+.paper {
+
+  background: white;
+
+  border: 2px solid #205580;
+
+  box-shadow: 0 6px 20px #5089ad33;
+
+  padding: 12px;
+
+  border-radius: 5px;
+
+}
+
+.paper h2 {
+
+  font-size: 23px;
+
+  margin: 8px;
+
+}
+
+.paper svg {
+
+  width: 100%;
+
+  height: auto;
+
+  display: block;
+
+}
+
+.page-label {
+
+  font-weight: bold;
+
+  margin: 12px;
+
+}
+
+#pageNumber {
+
+  font-weight: bold;
+
+}
+
+footer {
+
+  background: #91cfff;
+
+  padding: 20px;
+
+  margin-top: 35px;
+
+}
+
+@media print {
+
+  header, nav, footer, .controls, #cover {
+
+    display: none !important;
+
+  }
+
+  body { background: white; }
+
+  #book {
+
+    display: block !important;
+
+    max-width: 100%;
+
+    margin: 0;
+
+  }
+
+  .paper {
+
+    box-shadow: none;
+
+    border: none;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <h1>🏔️ Paper Peak 🎨</h1>
+
+  <p>Reach New Heights with Stationery!</p>
+
+</header>
+
+<nav>
+
+  <a href="index.html">🏠 Back to Paper Peak Home</a>
+
+</nav>
+
+<!-- COLOURED FRONT COVER -->
+
+<section id="cover">
+
+  <div class="cover-art">
+
+    <h2>Paper Peak<br>Coloring Book</h2>
+
+    <p>🌈 Dream • Create • Achieve 🌈</p>
+
+    <svg viewBox="0 0 400 350"
+
+         xmlns="http://www.w3.org/2000/svg">
+
+      <rect width="400" height="350" rx="20"
+
+            fill="#dff5ff"/>
+
+      <circle cx="320" cy="60" r="35"
+
+              fill="#ffdf63"/>
+
+      <circle cx="308" cy="53" r="4"/>
+
+      <circle cx="332" cy="53" r="4"/>
+
+      <path d="M307 68 Q320 80 333 68"
+
+            fill="none" stroke="#754c24"
+
+            stroke-width="3"/>
+
+      <path d="M0 250 L120 65 L245 250 Z"
+
+            fill="#ffffff" stroke="#65a7d5"
+
+            stroke-width="5"/>
+
+      <path d="M120 65 L160 130 L140 120
+
+               L120 145 L100 120 L80 150 Z"
+
+            fill="#8bcfff"/>
+
+      <path d="M120 250 L270 100 L400 250 Z"
+
+            fill="#70b9e9" stroke="#ffffff"
+
+            stroke-width="5"/>
+
+      <path d="M0 250 Q100 210 200 260
+
+               T400 250 L400 350 L0 350 Z"
+
+            fill="#83d98a"/>
+
+      <rect x="65" y="250" width="115" height="75"
+
+            rx="8" fill="#ffb4d5"
+
+            stroke="#176ba8" stroke-width="4"/>
+
+      <rect x="65" y="250" width="115" height="18"
+
+            fill="#ff83b7"/>
+
+      <path d="M110 290 L122 280 L135 290
+
+               L122 310 Z"
+
+            fill="white" stroke="#176ba8"
+
+            stroke-width="3"/>
+
+      <rect x="220" y="245" width="95" height="80"
+
+            rx="5" fill="#fff0a8"
+
+            stroke="#176ba8" stroke-width="4"/>
+
+      <path d="M235 260 H300 M235 275 H300
+
+               M235 290 H285"
+
+            stroke="#e6a52b" stroke-width="3"/>
+
+      <g stroke="#176ba8" stroke-width="3"
+
+         stroke-linejoin="round">
+
+        <path d="M180 320 L180 205 L200 165
+
+                 L220 205 L220 320 Z"
+
+              fill="#ff83b7"/>
+
+        <path d="M180 205 L200 165 L220 205 Z"
+
+              fill="#ffdf63"/>
+
+        <path d="M240 320 L240 200 L260 160
+
+                 L280 200 L280 320 Z"
+
+              fill="#83d98a"/>
+
+        <path d="M240 200 L260 160 L280 200 Z"
+
+              fill="#ffdf63"/>
+
+      </g>
+
+      <text x="200" y="340" text-anchor="middle"
+
+            font-size="17" font-weight="bold"
+
+            fill="#176ba8">Paper Peak</text>
+
+    </svg>
+
+    <h3>💖 Colour, relax, and have fun! 💖</h3>
+
+  </div>
+
+  <button onclick="openBook()">
+
+    📖 Open My Coloring Book!
+
+  </button>
+
+</section>
+
+<!-- INSIDE THE BOOK -->
+
+<section id="book">
+
+  <div class="paper">
+
+    <h2>♡ Paper Peak ♡</h2>
+
+    <div id="drawing"></div>
+
+    <div class="page-label" id="pageTitle"></div>
+
+  </div>
+
+  <div class="controls">
+
+    <p id="pageNumber"></p>
+
+    <button onclick="previousPage()">
+
+      ⬅ Previous
+
+    </button>
+
+    <button onclick="nextPage()">
+
+      Next ➡
+
+    </button>
+
+    <br>
+
+    <button onclick="printPage()">
+
+      🖨️ Print This Page
+
+    </button>
+
+    <br>
+
+    <button onclick="backToCover()">
+
+      🏠 Back to Cover
+
+    </button>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <p>💙 Paper Peak Coloring Book 💙</p>
+
+  <p>Reach New Heights with Stationery!</p>
+
+</footer>
+
+<script>
+
+// All drawings are black and white so they
+
+// can be printed and coloured.
+
+const pages = [
+
+{
+
+title: "Mountain Adventure",
+
+art: `
+
+<path d="M30 320 L180 70 L330 320 Z"
+
+      fill="white" stroke="black" stroke-width="4"/>
+
+<path d="M180 70 L140 145 L175 130 L200 160 L220 130 L250 180"
+
+      fill="white" stroke="black" stroke-width="3"/>
+
+<path d="M0 320 Q150 250 400 320"
+
+      fill="white" stroke="black" stroke-width="4"/>
+
+<circle cx="320" cy="70" r="35"
+
+        fill="white" stroke="black" stroke-width="4"/>
+
+<path d="M304 75 Q320 90 336 75"
+
+      fill="none" stroke="black" stroke-width="3"/>
+
+<g stroke="black" stroke-width="4" fill="white">
+
+<path d="M40 320 L40 250 L75 200 L110 250 L110 320 Z"/>
+
+<path d="M280 320 L280 250 L315 200 L350 250 L350 320 Z"/>
+
+</g>`
+
+},
+
+{
+
+title: "Cute Pencil",
+
+art: `
+
+<g stroke="black" stroke-width="5" stroke-linejoin="round">
+
+<path d="M130 290 L145 80 Q200 45 255 80 L270 290 Z"
+
+      fill="white"/>
+
+<path d="M145 80 Q200 110 255 80"
+
+      fill="none"/>
+
+<path d="M130 290 L200 355 L270 290 Z"
+
+      fill="white"/>
+
+<path d="M185 340 L200 355 L215 340"
+
+      fill="white"/>
+
+</g>
+
+<circle cx="180" cy="210" r="9"/>
+
+<circle cx="220" cy="210" r="9"/>
+
+<path d="M180 240 Q200 260 220 240"
+
+      fill="none" stroke="black" stroke-width="4"/>
+
+<path d="M145 275 Q200 295 255 275"
+
+      fill="none" stroke="black" stroke-width="3"/>`
+
+},
+
+{
+
+title: "Pencil Cup",
+
+art: `
+
+<g fill="white" stroke="black" stroke-width="4"
+
+   stroke-linejoin="round">
+
+<path d="M100 150 L300 150 L280 340 L120 340 Z"/>
+
+<path d="M110 150 L110 120 L290 120 L290 150 Z"/>
+
+<path d="M120 120 L130 20 L160 20 L170 120 Z"/>
+
+<path d="M180 120 L190 10 L220 10 L230 120 Z"/>
+
+<path d="M240 120 L250 35 L280 35 L290 120 Z"/>
+
+</g>
+
+<path d="M150 230 Q200 180 250 230
+
+         Q200 280 150 230 Z"
+
+      fill="white" stroke="black" stroke-width="4"/>
+
+<circle cx="175" cy="205" r="7"/>
+
+<circle cx="225" cy="205" r="7"/>
+
+<path d="M185 240 Q200 255 215 240"
+
+      fill="none" stroke="black" stroke-width="4"/>`
+
+},
+
+{
+
+title: "Stack of Books",
+
+art: `
+
+<g stroke="black" stroke-width="4"
+
+   stroke-linejoin="round">
+
+<rect x="70" y="250" width="260" height="70"
+
+      rx="8" fill="white"/>
+
+<rect x="100" y="175" width="240" height="70"
+
+      rx="8" fill="white"/>
+
+<rect x="60" y="100" width="260" height="70"
+
+      rx="8" fill="white"/>
+
+<path d="M100 100 L100 170 M140 175 L140 245
+
+         M120 250 L120 320"
+
+      fill="none"/>
+
+</g>
+
+<path d="M150 130 Q190 100 230 130
+
+         Q190 160 150 130 Z"
+
+      fill="white" stroke="black" stroke-width="3"/>
+
+<circle cx="185" cy="127" r="4"/>
+
+<circle cx="205" cy="127" r="4"/>
+
+<path d="M185 140 Q195 150 205 140"
+
+      fill="none" stroke="black" stroke-width="3"/>`
+
+},
+
+{
+
+title: "School Backpack",
+
+art: `
+
+<g stroke="black" stroke-width="5"
+
+   stroke-linejoin="round" fill="white">
+
+<path d="M130 100 Q200 35 270 100
+
+         L310 310 Q200 365 90 310 Z"/>
+
+<path d="M135 200 Q200 150 265 200
+
+         L275 290 Q200 330 125 290 Z"/>
+
+<path d="M155 95 L155 60 Q200 30 245 60 L245 95"/>
+
+<rect x="170" y="215" width="60" height="50" rx="10"/>
+
+</g>
+
+<circle cx="180" cy="160" r="8"/>
+
+<circle cx="220" cy="160" r="8"/>
+
+<path d="M180 180 Q200 200 220 180"
+
+      fill="none" stroke="black" stroke-width="4"/>
+
+<path d="M100 140 Q45 200 100 280
+
+         M300 140 Q355 200 300 280"
+
+      fill="none" stroke="black" stroke-width="5"/>`
+
+},
+
+{
+
+title: "Flower Garden",
+
+art: `
+
+<g stroke="black" stroke-width="4" fill="white">
+
+<circle cx="200" cy="130" r="28"/>
+
+<circle cx="200" cy="85" r="30"/>
+
+<circle cx="245" cy="130" r="30"/>
+
+<circle cx="200" cy="175" r="30"/>
+
+<circle cx="155" cy="130" r="30"/>
+
+<path d="M200 205 L200 340"/>
+
+<path d="M200 270 Q120 200 100 260
+
+         Q150 310 200 270 Z"/>
+
+<path d="M200 300 Q280 230 300 280
+
+         Q260 340 200 300 Z"/>
+
+</g>
+
+<circle cx="200" cy="130" r="22"
+
+        fill="white" stroke="black" stroke-width="4"/>
+
+<circle cx="193" cy="125" r="3"/>
+
+<circle cx="207" cy="125" r="3"/>
+
+<path d="M190 138 Q200 148 210 138"
+
+      fill="none" stroke="black" stroke-width="3"/>`
+
+},
+
+{
+
+title: "Cute Kitty",
+
+art: `
+
+<path d="M100 170 L110 60 L190 110
+
+         Q200 100 210 110 L290 60 L300 170
+
+         Q350 300 200 330 Q50 300 100 170 Z"
+
+      fill="white" stroke="black" stroke-width="5"
+
+      stroke-linejoin="round"/>
+
+<circle cx="155" cy="210" r="10"/>
+
+<circle cx="245" cy="210" r="10"/>
+
+<path d="M185 235 L215 235 L200 250 Z"
+
+      fill="white" stroke="black" stroke-width="3"/>
+
+<path d="M200 250 Q180 275 160 255
+
+         M200 250 Q220 275 240 255"
+
+      fill="none" stroke="black" stroke-width="4"/>
+
+<path d="M130 240 L60 225 M130 255 L60 265
+
+         M270 240 L340 225 M270 255 L340 265"
+
+      fill="none" stroke="black" stroke-width="3"/>
+
+<path d="M160 110 Q200 40 240 110"
+
+      fill="white" stroke="black" stroke-width="4"/>`
+
+},
+
+{
+
+title: "Rainbow and Clouds",
+
+art: `
+
+<path d="M70 270 A130 130 0 0 1 330 270"
+
+      fill="none" stroke="black" stroke-width="9"/>
+
+<path d="M95 270 A105 105 0 0 1 305 270"
+
+      fill="none" stroke="black" stroke-width="9"/>
+
+<path d="M120 270 A80 80 0 0 1 280 270"
+
+      fill="none" stroke="black" stroke-width="9"/>
+
+<path d="M145 270 A55 55 0 0 1 255 270"
+
+      fill="none" stroke="black" stroke-width="9"/>
+
+<path d="M40 270 Q20 240 50 220
+
+         Q65 170 110 200
+
+         Q150 180 160 225
+
+         Q190 270 150 285 L50 285 Z"
+
+      fill="white" stroke="black" stroke-width="4"/>
+
+<path d="M250 270 Q220 240 250 220
+
+         Q265 170 310 200
+
+         Q350 180 360 225
+
+         Q390 270 350 285 L260 285 Z"
+
+      fill="white" stroke="black" stroke-width="4"/>
+
+<path d="M190 60 L200 80 L220 85 L200 95
+
+         L190 115 L180 95 L160 85 L180 80 Z"
+
+      fill="white" stroke="black" stroke-width="3"/>`
+
+},
+
+{
+
+title: "Art Supplies",
+
+art: `
+
+<g stroke="black" stroke-width="4"
+
+   stroke-linejoin="round" fill="white">
+
+<rect x="60" y="230" width="100" height="110" rx="8"/>
+
+<rect x="170" y="200" width="100" height="140" rx="8"/>
+
+<path d="M75 230 L85 100 L115 100 L125 230 Z"/>
+
+<path d="M130 230 L140 60 L170 60 L180 230 Z"/>
+
+<path d="M205 200 L215 70 L245 70 L255 200 Z"/>
+
+</g>
+
+<circle cx="105" cy="275" r="6"/>
+
+<circle cx="135" cy="275" r="6"/>
+
+<path d="M110 295 Q120 310 130 295"
+
+      fill="none" stroke="black" stroke-width="3"/>
+
+<path d="M285 100 Q340 140 285 180
+
+         Q230 140 285 100 Z"
+
+      fill="white" stroke="black" stroke-width="4"/>`
+
+},
+
+{
+
+title: "Cute Bubble Tea",
+
+art: `
+
+<path d="M100 110 L300 110 L275 340
+
+         L125 340 Z"
+
+      fill="white" stroke="black" stroke-width="5"
+
+      stroke-linejoin="round"/>
+
+<path d="M190 110 L220 20"
+
+      fill="none" stroke="black" stroke-width="12"/>
+
+<path d="M100 110 Q200 150 300 110"
+
+      fill="none" stroke="black" stroke-width="5"/>
+
+<circle cx="165" cy="220" r="9"/>
+
+<circle cx="235" cy="220" r="9"/>
+
+<path d="M180 245 Q200 265 220 245"
+
+      fill="none" stroke="black" stroke-width="4"/>
+
+<g fill="white" stroke="black" stroke-width="4">
+
+<circle cx="160" cy="300" r="12"/>
+
+<circle cx="200" cy="315" r="12"/>
+
+<circle cx="240" cy="300" r="12"/>
+
+</g>
+
+<path d="M60 180 L40 160 M340 180 L360 160"
+
+      stroke="black" stroke-width="4"/>`
+
+},
+
+{
+
+title: "Mountain and Sun",
+
+art: `
+
+<circle cx="300" cy="85" r="40"
+
+        fill="white" stroke="black" stroke-width="4"/>
+
+<circle cx="288" cy="80" r="4"/>
+
+<circle cx="312" cy="80" r="4"/>
+
+<path d="M287 95 Q300 108 313 95"
+
+      fill="none" stroke="black" stroke-width="3"/>
+
+<path d="M20 330 L160 90 L300 330 Z"
+
+      fill="white" stroke="black" stroke-width="4"/>
+
+<path d="M160 90 L125 155 L160 145
+
+         L185 175 L210 150 L240 210"
+
+      fill="white" stroke="black" stroke-width="4"/>
+
+<path d="M200 330 L330 180 L410 330 Z"
+
+      fill="white" stroke="black" stroke-width="4"/>
+
+<path d="M0 330 Q150 290 400 330"
+
+      fill="white" stroke="black" stroke-width="4"/>
+
+<g fill="white" stroke="black" stroke-width="3">
+
+<path d="M50 330 L50 270 L80 225 L110 270 L110 330 Z"/>
+
+<path d="M290 330 L290 270 L320 225 L350 270 L350 330 Z"/>
+
+</g>`
+
+},
+
+{
+
+title: "Notebook and Pencil",
+
+art: `
+
+<g stroke="black" stroke-width="5"
+
+   stroke-linejoin="round" fill="white">
+
+<rect x="75" y="65" width="210" height="270" rx="10"/>
+
+<path d="M110 65 L110 335"/>
+
+<path d="M140 125 L250 125 M140 165 L250 165
+
+         M140 205 L250 205 M140 245 L230 245"/>
+
+<path d="M300 90 L340 100 L275 310 L235 300 Z"/>
+
+<path d="M235 300 L230 335 L275 310 Z"/>
+
+</g>
+
+<path d="M160 90 L200 75 L240 90 L200 115 Z"
+
+      fill="white" stroke="black" stroke-width="4"/>
+
+<path d="M175 90 L200 100 L225 90"
+
+      fill="none" stroke="black" stroke-width="3"/>`
+
+}
+
+];
+
+let currentPage = 0;
+
+function brandMark() {
+
+  return `
+
+    <text x="200" y="385"
+
+      text-anchor="middle"
+
+      font-size="23"
+
+      font-family="Arial"
+
+      font-weight="bold"
+
+      fill="white"
+
+      stroke="black"
+
+      stroke-width="0.7">
+
+      Paper Peak
+
+    </text>
+
+    <path d="M20 385 H100 M300 385 H380"
+
+      stroke="black" stroke-width="2"/>
+
+  `;
+
+}
+
+function renderPage() {
+
+  const page = pages[currentPage];
+
+  document.getElementById("drawing").innerHTML = `
+
+    <svg viewBox="0 0 400 410"
+
+         xmlns="http://www.w3.org/2000/svg"
+
+         role="img"
+
+         aria-label="${page.title} coloring page">
+
+      <rect x="2" y="2" width="396" height="406"
+
+            rx="12" fill="white"
+
+            stroke="black" stroke-width="2"/>
+
+      <text x="200" y="35"
+
+            text-anchor="middle"
+
+            font-family="Arial"
+
+            font-size="23"
+
+            font-weight="bold"
+
+            fill="white"
+
+            stroke="black"
+
+            stroke-width="0.8">
+
+        ♡ Paper Peak ♡
+
+      </text>
+
+      <g stroke-linecap="round"
+
+         stroke-linejoin="round">
+
+        ${page.art}
+
+      </g>
+
+      ${brandMark()}
+
+    </svg>
+
+  `;
+
+  document.getElementById("pageTitle").textContent =
+
+    page.title;
+
+  document.getElementById("pageNumber").textContent =
+
+    "Page " + (currentPage + 1) +
+
+    " of " + pages.length;
+
+}
+
+function openBook() {
+
+  document.getElementById("cover").style.display = "none";
+
+  document.getElementById("book").style.display = "block";
+
+  currentPage = 0;
+
+  renderPage();
+
+  window.scrollTo(0, 0);
+
+}
+
+function nextPage() {
+
+  if (currentPage < pages.length - 1) {
+
+    currentPage++;
+
+    renderPage();
+
+  } else {
+
+    alert("You reached the end of the coloring book! 💙");
+
+  }
+
+}
+
+function previousPage() {
+
+  if (currentPage > 0) {
+
+    currentPage--;
+
+    renderPage();
+
+  } else {
+
+    alert("You're on the first page! 💖");
+
+  }
+
+}
+
+function backToCover() {
+
+  document.getElementById("book").style.display = "none";
+
+  document.getElementById("cover").style.display = "block";
+
+  window.scrollTo(0, 0);
+
+}
+
+function printPage() {
+
+  window.print();
+
+}
+
+</script>
+
+</body>
+
+</html>
